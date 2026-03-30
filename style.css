@@ -1,0 +1,287 @@
+/* Basic Reset & Body Styles */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif; /* Using a modern sans-serif font */
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll from shapes */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #000;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.navbar .logo img {
+    height: 25px; /* Adjust as needed for TikTok logo */
+    filter: brightness(0) invert(1); /* Makes a black logo white on black background */
+    margin-right: 8px;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 65px); /* Full viewport height minus navbar height */
+    padding: 50px;
+    gap: 80px; /* Space between left and right columns */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    position: relative; /* For positioning absolute shapes */
+}
+
+.hero-left {
+    flex: 1;
+    max-width: 550px;
+    padding-right: 20px; /* Some padding for text */
+}
+
+.hero-left h1 {
+    font-size: 4.5em; /* Large, bold heading */
+    line-height: 1.1;
+    margin-bottom: 25px;
+    font-weight: 800; /* Extra bold */
+}
+
+.hero-left p {
+    font-size: 1.15em;
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+.btn-mulai {
+    display: inline-block;
+    background-color: #fe2c55; /* Red button */
+    color: #fff;
+    padding: 15px 40px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-mulai:hover {
+    background-color: #d1274a;
+}
+
+.hero-right {
+    flex: 1;
+    max-width: 500px; /* Max width for the image container */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px; /* Ensure some height even if image is small */
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    overflow: hidden; /* Crucial for rounded corners on image */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    z-index: 10; /* Make sure image is above shapes */
+}
+
+.image-container img {
+    width: 100%;
+    display: block; /* Removes extra space below image */
+    border-radius: 20px; /* Apply border-radius to the image itself */
+}
+
+.overlay-text {
+    position: absolute;
+    top: 20%; /* Adjust position as needed */
+    left: 10%; /* Adjust position as needed */
+    background-color: #55f0d3; /* Cyan background for text */
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1em;
+    line-height: 1.2;
+    text-transform: capitalize;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Dynamic Shapes */
+.shape {
+    position: absolute;
+    border-radius: 50%; /* Makes them circles */
+    opacity: 0.7;
+    filter: blur(80px); /* Soft blur effect */
+    z-index: 1; /* Behind the image */
+}
+
+.shape-red {
+    background-color: #fe2c55; /* Red color */
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left: -100px; /* Position off-screen to create partial circle */
+    transform: translateY(-50%);
+}
+
+.shape-cyan {
+    background-color: #55f0d3; /* Cyan color */
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    right: -50px; /* Position off-screen */
+}
+
+.tiktok-icon {
+    position: absolute;
+    bottom: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    width: 80px; /* Size of the icon */
+    height: 80px;
+    background-image: url('tiktok-logo-black.png'); /* A black TikTok logo */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7; /* Semi-transparent */
+    z-index: 15; /* Above the image */
+    transform: rotate(-15deg); /* Slight rotation */
+}
+
+.circles {
+    position: absolute;
+    top: 50px; /* Adjust as needed */
+    right: 50px; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 15;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .hero-section {
+        gap: 40px;
+        padding: 50px 30px;
+    }
+    .hero-left h1 {
+        font-size: 3.8em;
+    }
+    .shape-red {
+        width: 300px;
+        height: 300px;
+        left: -80px;
+    }
+    .shape-cyan {
+        width: 250px;
+        height: 250px;
+        right: -30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .hero-left,
+    .hero-right {
+        max-width: 100%;
+        padding-right: 0;
+    }
+    .hero-right {
+        margin-top: 40px; /* Space between text and image on smaller screens */
+    }
+
+    .hero-left h1 {
+        font-size: 3em;
+    }
+
+    .hero-left p {
+        font-size: 1em;
+    }
+
+    .shape-red {
+        top: unset;
+        bottom: -50px;
+        left: -50px;
+    }
+    .shape-cyan {
+        top: 50px;
+        right: -20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    .hero-left h1 {
+        font-size: 2.5em;
+    }
+    .image-container {
+        width: 90%; /* Make image container a bit smaller on very small screens */
+    }
+    .overlay-text {
+        font-size: 0.9em;
+        padding: 8px 12px;
+    }
+    .tiktok-icon {
+        width: 60px;
+        height: 60px;
+        bottom: 10px;
+        right: 10px;
+    }
+    .circles {
+        top: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 30px 15px;
+    }
+    .hero-left h1 {
+        font-size: 2em;
+    }
+    .btn-mulai {
+        padding: 12px 30px;
+        font-size: 1em;
+    }
+    .hero-right {
+        min-height: 350px;
+    }
+    .shape-red {
+        width: 200px;
+        height: 200px;
+        left: -30px;
+        filter: blur(50px);
+    }
+    .shape-cyan {
+        width: 180px;
+        height: 180px;
+        right: -10px;
+        filter: blur(50px);
+    }
+}
