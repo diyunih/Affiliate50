@@ -19,7 +19,7 @@
         <div class="hero-left">
             <h1>Tumbuhkan bisnismu dengan TikTok</h1>
             <p>Jangkau target audiensmu dan dapatkan hasil dengan cepat menggunakan TikTok Ads Manager. Dengan basis audiens yang besar dan fitur yang mudah digunakan, siapapun bisa jadi ahli pemasaran.</p>
-            <a href="./auth/register" class="btn-mulai">Mulai</a>
+            <a href="https//:tiktok.vipaffi.com/auth/register" class="btn-mulai">Mulai</a>
         </div>
         <div class="hero-right">
             <div class="image-container">
